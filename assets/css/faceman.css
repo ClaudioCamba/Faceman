@@ -156,9 +156,9 @@ h1 {
     font-weight: bold;
     height: 50px;
     border-top: 10px solid #343a40;
-    border-bottom: 7px solid #fff;
-    border-left: 7px solid #d6d9db;
-    border-right: 7px solid #d6d9db;
+    border-bottom: 7px solid #ddd;
+    border-left: 7px solid #aaa;
+    border-right: 7px solid #aaa;
     -webkit-box-shadow: inset 0px 0px 0px 1px grey, 0px -1px 0px 1px #a6a6a6, 0px 0px 0px 2px lightgrey;
     -moz-box-shadow: inset 0px 0px 0px 1px grey, 0px -1px 0px 1px #a6a6a6, 0px 0px 0px 2px lightgrey;
     box-shadow: inset 0px 0px 0px 1px grey, 0px -1px 0px 1px #a6a6a6, 0px 0px 0px 2px lightgrey;
