@@ -1,112 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>Faceman</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-	<link rel="stylesheet" href="CSS/style.css">
-
-	<link href="http://fonts.googleapis.com/css?family=Cabin:400,500,600,bold" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold" rel="stylesheet" type="text/css">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/faceman.css">
+  <title>Faceman #1</title>
 </head>
-<!-- Main Fluid Container -->
 
 <body class="container-fluid">
-	<!-- Main Section -->
-	<section class="row">
-		<section class="col-md-8 jumbotron-fluid order-2 order-md-1">
-			<!-- Game Title & Announcer -->
-			<header class="">
-				<!-- Title -->
-				<h1 class="display-4 font-weight-bold top" id="title"> FACEMAN </h1>
-			</header>
-			<!-- Health Bar & Wrong Answers Wrap -->
-			<section class="container">
-				<div class="row">
-					<!-- Health Bar -->
-					<div class="col row left-bar">
-						<div class="health-bar health-appear"></div>
-						<div class="health-bar health-appear"></div>
-						<div class="health-bar health-appear"></div>
-						<div class="health-bar health-appear"></div>
-						<div class="health-bar health-appear"></div>
-						<div class="health-bar health-appear"></div>
-						<div class="health-bar health-appear"></div>
-						<div class="health-bar health-appear"></div>
-					</div>
-					<!-- Wrong Answers -->
-					<section class="col right-bar">
-						<h2 class=" font-weight-bold" id="wrong"></h2>
-					</section>
-				</div>
-			</section>
 
-			<div class="reveal">
-				<h2 id="wordPreview" class="display-4 font-weight-bold"></h2>
-				<!-- The Word -->
-			</div>
+  <div class="row main">
+    <div class="content col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 order-sm-0 order-1">
 
-			<!-- Submit Section-->
-			<section class="submit">
-				<!-- Word Input -->
-				<input id="entryInput" type="text" class="text-center" maxlength="15" placeholder="Enter Word...">
-				<!-- Word Submit Button -->
-				<button type="button" class="btn btn-primary btn-lg btn3d" id="submit-btn"> SUBMIT </button>
-			</section>
-			<!-- Guess Section-->
-			<section class="guess hide">
-				<!-- guess input -->
-				<input id="guessInput" type="text" maxlength="1" placeholder="Enter Letter...">
-				<!-- guess button -->
-				<button type="button" id="guess-btn" class="btn btn-success btn-lg btn3d">GUESS</button>
-				<!-- reset button-->
-				<button type="button" value="Refresh Page" onClick="window.location.reload()" class="btn btn-danger btn-lg btn3d">RESET GAME</button>
+      <div class="row justify-content-center">
+        <h1>Faceman</h1>
+      </div>
 
-			</section>
+      <div class="row justify-content-center">
+        <div class="leftBar yelBar col-sm col-11">
+          <div class="row">
+            <span class="life"></span>
+            <span class="life"></span>
+            <span class="life"></span>
+            <span class="life"></span>
+            <span class="life"></span>
+            <span class="life"></span>
+            <span class="life"></span>
+            <span class="life"></span>
+          </div>
+        </div>
+        <div class="rightBar redBar col-sm col-11">
+        </div>
+      </div>
 
-		</section>
-		<!-- Face Image  -->
-		<figure class="col-md well order-1 order-md-2">
-			<img src="IMG/pic0.png" id="img" class="img-fluid" alt="Happy drawn face">
-		</figure>
-	</section>
+      <div class="row">
+        <div class="wordBar col">
+        </div>
+      </div>
 
-	<!-- Correct Sound  -->
-	<audio id="audCorrect">
-	  <source src="AUDIO/correct2.ogg" type="audio/ogg">
-	  <source src="AUDIO/correct2.mp3" type="audio/mpeg">
-	  Your browser does not support the audio element.
-	</audio>
-	<!-- Incorrect Sound  -->
-	<audio id="audIncorrect">
-		<source src="AUDIO/incorrect1.ogg" type="audio/ogg">
-		<source src="AUDIO/incorrect1.mp3" type="audio/mpeg">
-		Your browser does not support the audio element.
-	</audio>
-	<!-- Lose Sound  -->
-	<audio id="audLose">
-		<source src="AUDIO/youLose.ogg" type="audio/ogg">
-		<source src="AUDIO/youLose.mp3" type="audio/mpeg">
-		Your browser does not support the audio element.
-	</audio>
-	<!-- Win Sound  -->
-	<audio id="audWin">
-		<source src="AUDIO/taaDaa.ogg" type="audio/ogg">
-		<source src="AUDIO/taaDaa.mp3" type="audio/mpeg">
-		Your browser does not support the audio element.
-	</audio>
-	<!-- Submit Sound  -->
-	<audio id="audBegin">
-		<source src="AUDIO/begin.ogg" type="audio/ogg">
-		<source src="AUDIO/begin.mp3" type="audio/mpeg">
-		Your browser does not support the audio element.
-	</audio>
+      <div class="play row justify-content-center">
+        <input id="playInput" type="text" maxlength="12" placeholder="Enter Word...">
+        <button id="playBtn" class="btn btn-primary btn-lg btn3d" type="button"><i class="fas fa-play"></i></button>
+      </div>
 
-	<script src="JavaScript/jquery-3.3.1.min.js"></script>
-	<script src="JavaScript/faceman.js"></script>
+      <div class="guess row">
+        <input id="guessInput" type="text" maxlength="1" placeholder="?">
+        <button id="guessBtn" type="button" class="btn btn-success btn-lg btn3d">Guess</button>
+        <button id="resetBtn" type="button" class="btn btn-danger btn-lg btn3d">
+          <i class="fas fa-undo-alt"></i>
+        </button>
+      </div>
+
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 order-sm-1 order-0">
+      <div class="img">
+        <img class="img-fluid" src="assets/img/pic0.png" alt="Face Expressions">
+      </div>
+    </div>
+  </div>
+
+  <!-- audio -->
+  <!-- Correct Sound  -->
+  <audio class="audCorrect">
+    <source src="assets/audio/correct2.ogg" type="audio/ogg">
+    <source src="assets/audio/correct2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- Incorrect Sound  -->
+  <audio class="audIncorrect">
+    <source src="assets/audio/incorrect1.ogg" type="audio/ogg">
+    <source src="assets/audio/incorrect1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- Lose Sound  -->
+  <audio class="audLose">
+    <source src="assets/audio/youLose.ogg" type="audio/ogg">
+    <source src="assets/audio/youLose.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- Win Sound  -->
+  <audio class="audWin">
+    <source src="assets/audio/taaDaa.ogg" type="audio/ogg">
+    <source src="assets/audio/taaDaa.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- Submit Sound  -->
+  <audio class="audBegin">
+    <source src="assets/audio/begin.ogg" type="audio/ogg">
+    <source src="assets/audio/begin.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- restart Sound  -->
+  <audio class="audRestart">
+    <source src="assets/audio/restart.ogg" type="audio/ogg">
+    <source src="assets/audio/restart.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- misc Sound  -->
+  <audio class="audMisc">
+    <source src="assets/audio/misc.ogg" type="audio/ogg">
+    <source src="assets/audio/misc.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="assets/js/faceman.js" type="text/javascript"></script>
 </body>
 
 </html>
