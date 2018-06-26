@@ -134,6 +134,7 @@ $('#resetBtn').on("click", function() {
   $('.leftBar span').removeClass('lifeGr').addClass('life');
   $('.leftBar').addClass('yelBar').removeClass('GrBar');
   $('.rightBar').addClass('redBar').removeClass('GrBar');
+  $('#guessInput').val('');
   soundPlay('.audRestart');
   backGround();
   correct = '';
