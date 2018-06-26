@@ -58,7 +58,6 @@ $('#playBtn').on("click", function() {
     stored = playInput.value.toUpperCase();
     $('#playInput').val('');
     $('#guessInput,#guessBtn').show();
-    $('#guessInput').focus();
   } else {
     // if word input section is empty
     $('#playInput').addClass('error1');
@@ -124,7 +123,6 @@ $('#guessBtn').on("click", function() {
     soundPlay('.audWin');
     backGround();
   }
-  $('#guessInput').focus();
   $('#guessInput').val('');
 });
 
