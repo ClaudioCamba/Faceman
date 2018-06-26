@@ -58,13 +58,13 @@ $('#playBtn').on("click", function() {
     stored = playInput.value.toUpperCase();
     $('#playInput').val('');
     $('#guessInput,#guessBtn').show();
-   
+    $('#guessInput').focus();
   } else {
     // if word input section is empty
     $('#playInput').addClass('error1');
     setTimeout(function() {
       $('#playInput').removeClass('error1');
-    }, 500);
+    }, 1000);
     soundPlay('.audMisc');
   }
 });
@@ -95,7 +95,7 @@ $('#guessBtn').on("click", function() {
       $('.rightBar').addClass('error2');
       setTimeout(function() {
         $('.rightBar').removeClass('error2');
-      }, 500);
+      }, 1500);
       soundPlay('.audMisc');
     }
   } else {
@@ -103,7 +103,7 @@ $('#guessBtn').on("click", function() {
     $('#guessInput').addClass('error1');
     setTimeout(function() {
       $('#guessInput').removeClass('error1');
-    }, 500);
+    }, 1000);
     soundPlay('.audMisc');
   }
   if ($('.life').length === 0) {
@@ -124,7 +124,7 @@ $('#guessBtn').on("click", function() {
     soundPlay('.audWin');
     backGround();
   }
- 
+  $('#guessInput').focus();
   $('#guessInput').val('');
 });
 
